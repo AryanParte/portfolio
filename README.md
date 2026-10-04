@@ -35,6 +35,12 @@ npm run format:check
 - `app/globals.css` contains the visual system and responsive rules. `public/favicon.svg` is the small AP brand mark.
 - `.env.example` shows the optional production URL variable. Set `NEXT_PUBLIC_SITE_URL` to the deployed origin before building so canonical/sitemap links use the actual address.
 
+## Motion and accessibility
+
+The homepage uses CSS and the native Web Animations API; there is no production animation dependency. `components/hero-signal.tsx` is an abstract signal-routing illustration, not measured project data. `components/home-motion.tsx` adds one-time section and pipeline reveals through IntersectionObserver. Content is rendered visibly on the server and stays usable without JavaScript.
+
+System reduced-motion preferences disable the effects, including on initial hydration. The hero also has a manual pause control, pauses outside the viewport and in hidden tabs, and keyboard focus immediately finishes section reveals. The motion test covers system preferences, preference changes, manual pause, cancellation, and cleanup.
+
 ## Content standards
 
 Claims and limitations were checked against the public GitHub repositories on October 4, 2026. `docs/CONTENT_AUDIT.md` explains the selection. The investment benchmark is a synthetic local workload, the API hub uses simulated integrations, and the NFL project is an active reporting foundation. Update case-study status and validation when those repositories change. Do not add screenshots, outcomes, production claims, or affiliation without evidence.

@@ -15,4 +15,4 @@ The public GitHub repository list and relevant README, source, and evidence docu
 | `FakeNewsDetection`, `FlightPricePrediction`, `SpotifySongCluster`, `MLFinal` | Omitted from homepage | Course/notebook work illustrates learning but adds less to the systems narrative than the selected projects.                                         |
 | `Flubo`, `Trellis`, `temp-repo`, `ITSC3155-Assignments`                       | Omitted               | Weaker fit or documentation/evidence for a polished professional selection.                                                                          |
 
-The user-supplied brief is the source for Cognizant/Ally Financial, Theorem Labs, and Kirdar experience. No public contact email was verified. Repository URLs and evidence links are in `content/projects.ts`.
+The user-supplied brief is the source for the Ally Financial, Theorem Labs, and Kirdar experience. No public contact email was verified. Repository URLs and evidence links are in `content/projects.ts`.

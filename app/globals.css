@@ -1056,3 +1056,422 @@ h1 > span {
 .rail-item strong a:hover {
   color: var(--accent);
 }
+
+/* Motion pass: a readable static composition, progressively enhanced. */
+.hero {
+  position: relative;
+  animation: none;
+  padding-top: 56px;
+}
+.hero-composition {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 26px;
+  align-items: center;
+}
+.hero-copy {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+}
+.hero-copy > .eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 10px;
+  letter-spacing: 1.2px;
+}
+.hero h1 {
+  font-size: clamp(42px, 4.35vw, 57px);
+  letter-spacing: -2.8px;
+  line-height: 1.12;
+}
+.hero-bottom {
+  display: block;
+}
+.hero-bottom > p {
+  font-size: 17px;
+  max-width: 570px;
+}
+.hero-actions {
+  margin-top: 26px;
+}
+.hero-visual {
+  position: relative;
+  min-width: 0;
+  margin-right: -20px;
+}
+.hero-signal {
+  position: relative;
+  padding: 22px 0 10px;
+  background: radial-gradient(ellipse at 50% 50%, #1c2e4270, transparent 68%);
+}
+.signal-caption,
+.signal-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  font:
+    10px/1.5 ui-monospace,
+    SFMono-Regular,
+    Consolas,
+    monospace;
+  letter-spacing: 1px;
+  color: #91a6bc;
+  padding: 0 20px;
+}
+.signal-caption {
+  border-bottom: 1px solid #304153;
+  padding-bottom: 12px;
+}
+.signal-map {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+.signal-footer {
+  border-top: 1px solid #304153;
+  padding-top: 12px;
+  font-size: 12px;
+  letter-spacing: 0;
+}
+.signal-packets path {
+  stroke-dasharray: 5 95;
+  stroke-dashoffset: 0;
+  opacity: 0.65;
+}
+.motion-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 16px 20px 0 auto;
+  border: 0;
+  background: transparent;
+  padding: 6px 0;
+  color: var(--muted);
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  min-height: 32px;
+}
+.motion-control:hover {
+  color: var(--text);
+}
+.motion-control:disabled {
+  cursor: default;
+}
+.motion-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #3d5067;
+  border-radius: 50%;
+  font-size: 15px;
+}
+html[data-motion='on'] .signal-packets path {
+  animation: route-signal 3.8s linear infinite;
+}
+.signal-packets path:nth-child(2) {
+  animation-delay: -0.8s !important;
+}
+.signal-packets path:nth-child(3) {
+  animation-delay: -1.6s !important;
+}
+.signal-packets path:nth-child(4) {
+  animation-delay: -1.9s !important;
+}
+.signal-packets path:nth-child(5) {
+  animation-delay: -2.7s !important;
+}
+.signal-packets path:nth-child(6) {
+  animation-delay: -3.5s !important;
+}
+@keyframes route-signal {
+  from {
+    stroke-dashoffset: 100;
+    opacity: 0.3;
+  }
+  35%,
+  65% {
+    opacity: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+    opacity: 0.3;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hero-copy > .eyebrow,
+  .hero h1,
+  .hero-bottom,
+  .hero-context,
+  .hero-visual {
+    animation: arrive 0.75s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  }
+  .hero h1 {
+    animation-delay: 0.08s;
+  }
+  .hero-bottom {
+    animation-delay: 0.16s;
+  }
+  .hero-visual {
+    animation-delay: 0.24s;
+  }
+  .hero-context {
+    animation-delay: 0.32s;
+  }
+}
+@keyframes arrive {
+  from {
+    opacity: 0.3;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.site-header nav a {
+  position: relative;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.site-header nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 1px;
+  height: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+.site-header nav a:hover::after,
+.site-header nav a:focus-visible::after {
+  transform: scaleX(1);
+}
+.site-header nav .nav-contact::after {
+  display: none;
+}
+.site-header nav .nav-contact:hover,
+.site-header nav .nav-contact:focus-visible {
+  border-color: #7193ba;
+  background: #182536;
+}
+.project-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.project-card::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: radial-gradient(ellipse at top right, #304d6c55, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+.project-card::after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  left: 30px;
+  right: 30px;
+  top: 0;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  transform: scaleX(0.15);
+  transform-origin: left;
+  opacity: 0.3;
+  transition:
+    transform 0.45s ease,
+    opacity 0.3s ease;
+}
+.project-card:focus-within {
+  border-color: #7897bc;
+  background: #161e29;
+}
+.project-card:focus-within::before {
+  opacity: 1;
+}
+.project-card:focus-within::after {
+  transform: scaleX(1);
+  opacity: 1;
+}
+@media (hover: hover) and (pointer: fine) {
+  .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 32px #0003;
+  }
+  .project-card:hover::before {
+    opacity: 1;
+  }
+  .project-card:hover::after {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+.flagship {
+  box-shadow: 0 24px 60px #0002;
+}
+.pipeline-panel {
+  position: relative;
+}
+.pipeline li {
+  position: relative;
+}
+.pipeline li > span {
+  display: grid;
+  place-items: center;
+  flex: 0 0 27px;
+  height: 27px;
+  border: 1px solid #46617e;
+  border-radius: 50%;
+  background: #132234;
+}
+.pipeline li:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 13px;
+  top: 51px;
+  bottom: -18px;
+  width: 1px;
+  background: linear-gradient(#678bad, #314256);
+}
+.section-heading {
+  position: relative;
+  padding-left: 20px;
+  border-left: 1px solid #34485f;
+}
+.section-heading::before {
+  content: '';
+  position: absolute;
+  left: -2px;
+  top: 0;
+  width: 3px;
+  height: 25px;
+  background: var(--accent);
+}
+.sports-statement {
+  position: relative;
+}
+.sports-statement .big-index {
+  font-size: 76px;
+  color: #55728f;
+  letter-spacing: -6px;
+}
+.sports-layout {
+  background: linear-gradient(105deg, #17233066, transparent 65%);
+  padding-left: 25px;
+}
+.contact-section {
+  position: relative;
+}
+.contact-section::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 90px;
+  height: 1px;
+  background: var(--accent);
+}
+@media (max-width: 1000px) {
+  .hero-composition {
+    grid-template-columns: 1.15fr 1fr;
+    gap: 16px;
+  }
+  .hero h1 {
+    font-size: 43px;
+    letter-spacing: -2px;
+  }
+  .hero-copy > .eyebrow {
+    font-size: 9px;
+    letter-spacing: 0.5px;
+  }
+}
+@media (max-width: 760px) {
+  .hero-composition {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .hero-visual {
+    margin: 12px 0 0;
+    max-width: 480px;
+    width: 100%;
+    justify-self: center;
+  }
+  .hero-signal {
+    padding-top: 5px;
+  }
+  .signal-map {
+    max-height: 235px;
+  }
+  .hero h1 {
+    font-size: clamp(36px, 7.7vw, 53px);
+    letter-spacing: -1.8px;
+  }
+  .hero-context {
+    margin-top: 25px;
+  }
+  .hero-copy > .eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.8px;
+  }
+  .sports-layout {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}
+@media (max-width: 400px) {
+  .hero {
+    padding-top: 30px;
+  }
+  .hero-copy > .eyebrow {
+    font-size: 9px;
+  }
+  .hero-bottom > p {
+    font-size: 16px;
+  }
+  .hero h1 {
+    font-size: 35px;
+  }
+  .signal-map {
+    max-height: 205px;
+  }
+}
+html[data-motion='off'] *,
+html[data-motion='off'] *::before,
+html[data-motion='off'] *::after {
+  animation: none !important;
+  transition: none !important;
+}
+html[data-motion='off'] {
+  scroll-behavior: auto;
+}
+html[data-motion='off'] .project-card:hover,
+html[data-motion='off'] .button:hover {
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .project-card:hover,
+  .button:hover {
+    transform: none;
+  }
+  .signal-packets path {
+    animation: none !important;
+  }
+}
+.hero-visual:not([data-in-view='true']) .signal-packets path,
+html[data-tab-hidden='true'] .signal-packets path {
+  animation-play-state: paused !important;
+}

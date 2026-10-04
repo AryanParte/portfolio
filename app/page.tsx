@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import { HeroSignal } from '@/components/hero-signal';
+import { HomeMotion } from '@/components/home-motion';
 import { projects, sportsRoadmap } from '@/content/projects';
 import { site } from '@/content/site';
 import { ProjectCard } from '@/components/project-card';
@@ -11,47 +13,53 @@ export default function Home() {
   return (
     <main id="main">
       <section className="hero" aria-labelledby="intro-title">
-        <div className="eyebrow">
-          <span className="small-line" />
-          SOFTWARE ENGINEERING / APPLIED AI / DATA
-        </div>
-        <h1 id="intro-title">
-          Building intelligent,
-          <br />
-          <span>data-driven systems.</span>
-        </h1>
-        <div className="hero-bottom">
-          <p>
-            I’m <strong>Aryan Parte</strong>. I build software that turns
-            complex data into useful products—from reliable backend systems to a
-            growing body of work in football and basketball.
-          </p>
-          <div className="hero-actions">
-            <Link className="button primary" href="#work">
-              Explore my work
-            </Link>
-            <a
-              className="text-link"
-              href={site.github}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub
-            </a>
+        <div className="hero-composition">
+          <div className="hero-copy">
+            <div className="eyebrow">
+              <span className="small-line" />
+              SOFTWARE ENGINEERING / APPLIED AI / DATA
+            </div>
+            <h1 id="intro-title">
+              Building intelligent,
+              <br />
+              <span>data-driven systems.</span>
+            </h1>
+            <div className="hero-bottom">
+              <p>
+                I’m <strong>Aryan Parte</strong>. I build software that turns
+                complex data into useful products—from reliable backend systems
+                to a growing body of work in football and basketball.
+              </p>
+              <div className="hero-actions">
+                <Link className="button primary" href="#work">
+                  Explore my work
+                </Link>
+                <a
+                  className="text-link"
+                  href={site.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="hero-visual">
+            <HeroSignal />
+            <HomeMotion />
           </div>
         </div>
         <div className="hero-context">
           <span>
             Currently <strong>Software Engineer</strong>
           </span>
-          <span>
-            Ally Financial <span className="muted">through Cognizant</span>
-          </span>
+          <span>Ally Financial</span>
         </div>
       </section>
 
       <section id="work" className="section" aria-labelledby="work-title">
-        <div className="section-heading">
+        <div className="section-heading" data-reveal>
           <div className="eyebrow">01 / SELECTED WORK</div>
           <h2 id="work-title">Engineering, in practice.</h2>
           <p>
@@ -59,7 +67,7 @@ export default function Home() {
             honest boundaries.
           </p>
         </div>
-        <article className="flagship">
+        <article className="flagship" data-reveal>
           <div className="flagship-copy">
             <div className="card-top">
               <span className="eyebrow">SPORTS ENGINEERING</span>
@@ -121,15 +129,15 @@ export default function Home() {
         className="section sports-section"
         aria-labelledby="sports-title"
       >
-        <div className="section-heading">
-          <div className="eyebrow">02 / SPORTS & DATA</div>
+        <div className="section-heading" data-reveal>
+          <div className="eyebrow">02 / DATA ANALYTICS</div>
           <h2 id="sports-title">The sports work is growing.</h2>
           <p>
             Football and basketball are where I’m applying the same engineering
             discipline to a new class of decisions.
           </p>
         </div>
-        <div className="sports-layout">
+        <div className="sports-layout" data-reveal>
           <div className="sports-statement">
             <span className="big-index">01</span>
             <h3>Start with a trustworthy measurement.</h3>
@@ -186,17 +194,16 @@ export default function Home() {
         className="section about-section"
         aria-labelledby="about-title"
       >
-        <div className="section-heading">
+        <div className="section-heading" data-reveal>
           <div className="eyebrow">03 / EXPERIENCE & CAPABILITIES</div>
           <h2 id="about-title">A foundation across systems and AI.</h2>
         </div>
-        <div className="about-grid">
+        <div className="about-grid" data-reveal>
           <div className="about-copy">
             <p>
               My work spans backend architecture, applied AI, and data products.
-              I currently work as a software engineer at Cognizant on an Ally
-              Financial engineering team. Earlier software and AI experience
-              includes Theorem Labs and Kirdar.
+              I currently work as a software engineer at Ally Financial. Earlier
+              software and AI experience includes Theorem Labs and Kirdar.
             </p>
             <p>
               I’m especially interested in the point where dependable
@@ -209,7 +216,7 @@ export default function Home() {
             <div>
               <span>NOW</span>
               <strong>Software Engineer</strong>
-              <p>Cognizant · Ally Financial team</p>
+              <p>Ally Financial</p>
             </div>
             <div>
               <span>PREVIOUSLY</span>
@@ -242,6 +249,7 @@ export default function Home() {
       <section
         id="contact"
         className="section contact-section"
+        data-reveal
         aria-labelledby="contact-title"
       >
         <div>
