@@ -1,9 +1,12 @@
 import Link from 'next/link';
-import { projects } from '@/content/projects';
+import { projects, sportsRoadmap } from '@/content/projects';
 import { site } from '@/content/site';
 import { ProjectCard } from '@/components/project-card';
 
 const nfl = projects[0];
+const sportsProjects = projects.filter(
+  (project) => project.category === 'Sports engineering',
+);
 export default function Home() {
   return (
     <main id="main">
@@ -141,27 +144,24 @@ export default function Home() {
             </Link>
           </div>
           <div className="sports-rail">
-            <div className="rail-item">
-              <span>NOW</span>
-              <strong>Opponent intelligence</strong>
-              <p>Reproducible NFL tendency reports and situational cohorts.</p>
-            </div>
-            <div className="rail-item">
-              <span>IN THE ROADMAP</span>
-              <strong>Broader NFL analysis</strong>
-              <p>
-                Matched baselines, uncertainty, and richer football questions
-                after the reporting foundation.
-              </p>
-            </div>
-            <div className="rail-item">
-              <span>FUTURE DIRECTION</span>
-              <strong>Basketball data products</strong>
-              <p>
-                NBA engineering and applied ML work will join this collection as
-                it exists.
-              </p>
-            </div>
+            {sportsProjects.map((project) => (
+              <div className="rail-item" key={project.slug}>
+                <span>{project.status.toUpperCase()}</span>
+                <strong>
+                  <Link href={`/projects/${project.slug}/`}>
+                    {project.shortName}
+                  </Link>
+                </strong>
+                <p>{project.summary}</p>
+              </div>
+            ))}
+            {sportsRoadmap.map((item) => (
+              <div className="rail-item" key={item.title}>
+                <span>{item.stage}</span>
+                <strong>{item.title}</strong>
+                <p>{item.detail}</p>
+              </div>
+            ))}
           </div>
         </div>
         <div className="sports-note">

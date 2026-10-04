@@ -1053,3 +1053,6 @@ h1 > span {
     font-size: 12px;
   }
 }
+.rail-item strong a:hover {
+  color: var(--accent);
+}

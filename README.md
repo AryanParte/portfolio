@@ -29,7 +29,7 @@ npm run format:check
 
 ## Content model
 
-- `content/projects.ts` holds the selected projects and their case-study sections. Add a new object with a unique `slug` to generate a case-study route and a homepage card. The sports section's growth narrative can then be updated in `app/page.tsx`.
+- `content/projects.ts` holds the selected projects, case-study sections, and sports roadmap. Add a new object with a unique `slug` to generate a case-study route, homepage card, and (for sports projects) an item in the sports section. Update the roadmap entries in the same data file as milestones are completed.
 - `content/site.ts` holds the name, profile links, and contact email. `email` is intentionally empty until Aryan supplies a verified public address. The homepage shows “Address available on request” meanwhile; no invented email link is shipped.
 - `app/page.tsx` composes the homepage. `app/projects/[slug]/page.tsx` renders each project from structured data.
 - `app/globals.css` contains the visual system and responsive rules. `public/favicon.svg` is the small AP brand mark.

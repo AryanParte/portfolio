@@ -352,3 +352,18 @@ export const projects: Project[] = [
 export const projectBySlug = Object.fromEntries(
   projects.map((project) => [project.slug, project]),
 ) as Record<string, Project>;
+
+export const sportsRoadmap = [
+  {
+    stage: 'IN THE ROADMAP',
+    title: 'Broader NFL analysis',
+    detail:
+      'Matched baselines, uncertainty, and richer football questions after the reporting foundation.',
+  },
+  {
+    stage: 'FUTURE DIRECTION',
+    title: 'Basketball data products',
+    detail:
+      'NBA engineering and applied ML work will join this collection as it exists.',
+  },
+] as const;
