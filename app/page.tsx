@@ -54,9 +54,7 @@ export default function Home() {
           <span>
             Currently <strong>Software Engineer</strong>
           </span>
-          <span>
-            Ally Financial <span className="muted">through Cognizant</span>
-          </span>
+          <span>Ally Financial</span>
         </div>
       </section>
 
@@ -132,7 +130,7 @@ export default function Home() {
         aria-labelledby="sports-title"
       >
         <div className="section-heading" data-reveal>
-          <div className="eyebrow">02 / SPORTS & DATA</div>
+          <div className="eyebrow">02 / DATA ANALYTICS</div>
           <h2 id="sports-title">The sports work is growing.</h2>
           <p>
             Football and basketball are where I’m applying the same engineering
@@ -204,9 +202,8 @@ export default function Home() {
           <div className="about-copy">
             <p>
               My work spans backend architecture, applied AI, and data products.
-              I currently work as a software engineer at Cognizant on an Ally
-              Financial engineering team. Earlier software and AI experience
-              includes Theorem Labs and Kirdar.
+              I currently work as a software engineer at Ally Financial. Earlier
+              software and AI experience includes Theorem Labs and Kirdar.
             </p>
             <p>
               I’m especially interested in the point where dependable
@@ -219,7 +216,7 @@ export default function Home() {
             <div>
               <span>NOW</span>
               <strong>Software Engineer</strong>
-              <p>Cognizant · Ally Financial team</p>
+              <p>Ally Financial</p>
             </div>
             <div>
               <span>PREVIOUSLY</span>

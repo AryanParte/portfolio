@@ -21,6 +21,8 @@ test('the export has a homepage and one complete route per selected project', ()
   const home = htmlFor('');
   assert.match(home, /Aryan Parte/);
   assert.match(home, /Ally Financial/);
+  assert.match(textOf(home), /Data analytics/);
+  assert.doesNotMatch(textOf(home), /Cognizant/i);
   assert.match(home, /id="sports"/);
   assert.match(home, /id="contact"/);
   assert.match(home, /www\.linkedin\.com\/in\/aryanparte/);
