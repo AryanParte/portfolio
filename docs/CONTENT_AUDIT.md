@@ -1,0 +1,18 @@
+# Content and project selection — October 4, 2026
+
+Positioning: software engineer building intelligent, data-driven systems. It accounts for current professional software work, substantial backend and data systems, applied AI, and an expanding sports focus. Sports is prominent through the flagship and a growth section without presenting future NFL/NBA projects as finished work.
+
+The public GitHub repository list and relevant README, source, and evidence documents were reviewed. LinkedIn blocked direct reading, so experience details are limited to Aryan's supplied brief. No dates, job duties, or impact metrics were inferred from other people with similar names. Akhi Chappidi's portfolio was reviewed only for the principle of presenting projects as problems, methods, systems, evidence, and boundaries. This site's layout, copy, navigation, visual language, and project selection were authored for Aryan.
+
+| Repository                                                                    | Decision              | Reason                                                                                                                                               |
+| ----------------------------------------------------------------------------- | --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `nfl-opponent-intelligence`                                                   | Flagship case study   | Best evidence of a growing sports engineering direction; explicit provenance, definitions, audits, tests, and honest roadmap.                        |
+| `API-Integration-Hub-Notification-Service`                                    | Case study            | Strong backend evidence: idempotency, durable work, retries, API contract, CI.                                                                       |
+| `Investment-Portfolio-Analytics-Platform`                                     | Case study            | End-to-end data system with documented synthetic-workload and benchmark boundaries.                                                                  |
+| `TextbookGen`                                                                 | Case study            | Applied AI product flow and incremental client progress; labeled prototype because its README and evaluation are incomplete.                         |
+| `FantasyFootball`                                                             | Context link          | Earlier sports notebook is relevant background, but not comparable in engineering depth to the new platform.                                         |
+| `Kirdar`                                                                      | Experience mention    | Aryan named it as past work; the repository contains application code, but public attribution and outcome details are insufficient for a case study. |
+| `FakeNewsDetection`, `FlightPricePrediction`, `SpotifySongCluster`, `MLFinal` | Omitted from homepage | Course/notebook work illustrates learning but adds less to the systems narrative than the selected projects.                                         |
+| `Flubo`, `Trellis`, `temp-repo`, `ITSC3155-Assignments`                       | Omitted               | Weaker fit or documentation/evidence for a polished professional selection.                                                                          |
+
+The user-supplied brief is the source for Cognizant/Ally Financial, Theorem Labs, and Kirdar experience. No public contact email was verified. Repository URLs and evidence links are in `content/projects.ts`.
