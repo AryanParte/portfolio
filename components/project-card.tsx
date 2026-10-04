@@ -9,6 +9,7 @@ export function ProjectCard({
 }) {
   return (
     <article
+      data-reveal
       className={`project-card ${featured ? 'project-card-featured' : ''}`}
     >
       <div className="project-card-head">
